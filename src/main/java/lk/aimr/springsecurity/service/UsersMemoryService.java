@@ -9,7 +9,9 @@ import java.util.List;
 public class UsersMemoryService {
 
     public List<UserDetails> users(){
-       UserDetails u1 = new User();
+       UserDetails u1 = new User("kevin","1234","ADMIN");
+        UserDetails u2 = new User("Shehan","1234","ADMIN");
+        UserDetails u3 = new User("Perera","1234","ADMIN");
         return null;
     }
 }
