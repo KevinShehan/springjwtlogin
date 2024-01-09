@@ -3,9 +3,11 @@ package lk.aimr.springsecurity.service;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class InMemoryUserDetailsService implements UserDetailsService {
     private List<UserDetails> users;
 
@@ -15,6 +17,8 @@ public class InMemoryUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+        return users.stream().filter(u ->u.getUsername()
+                .equals(username))
+                .findFirst().orElseThrow(()-> new UsernameNotFoundException("User Not Found"));
     }
 }
