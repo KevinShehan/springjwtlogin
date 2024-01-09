@@ -6,5 +6,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class UsersMemoryService {
-    public List<UserDetails> userDetailsList;
+
+    public List<UserDetails> users(){
+        return null;
+    }
 }
