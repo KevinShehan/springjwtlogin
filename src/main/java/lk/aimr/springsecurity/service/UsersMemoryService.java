@@ -12,6 +12,6 @@ public class UsersMemoryService {
        UserDetails u1 = new User("kevin","1234","ADMIN");
         UserDetails u2 = new User("Shehan","1234","ADMIN");
         UserDetails u3 = new User("Perera","1234","ADMIN");
-        return null;
+        return List.of(u1,u2,u3);
     }
 }
